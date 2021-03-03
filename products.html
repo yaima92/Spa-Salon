@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>eMercado - Todo lo que busques está aquí</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <style>
+    body {
+      font-family: Arial;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    form.example input[type=text] {
+      padding: 10px;
+      font-size: 17px;
+      border: 1px solid grey;
+      float: left;
+      width: 80%;
+      background: #f1f1f1;
+    }
+
+    form.example button {
+      float: left;
+      width: 20%;
+      padding: 10px;
+      background: #2196F3;
+      color: white;
+      font-size: 17px;
+      border: 1px solid grey;
+      border-left: none;
+      cursor: pointer;
+    }
+
+    form.example button:hover {
+      background: #0b7dda;
+    }
+
+    form.example::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: relative;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: none;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {
+      background-color: #f1f1f1
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    
+  </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">E-commerce</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" 
+              data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item container d-flex flex-column flex-md-row justify-content-between">
+            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link" href="categories.html">Categorías</a>
+            <a class="nav-link" href="products.html">Productos</a>
+            <a class="nav-link" href="sell.html">Vender</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a style="background-color: hotpink; border: none;" class="nav-link dropdown-toggle btn btn-secondary" href="#" id="dropdownMenuLink" role="button" 
+               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Bienvenido/a: <span style="color: white; font-weight: bold;" id="usuario"></span>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="perfil.html">Perfil de Usuario</a>
+            <a class="dropdown-item" href="cart.html">Carrito de Compras</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" style="padding:19px;"><button style="border: none; background-color: hotpink;" onclick="localStorage.clear(); 
+                alert('Usuario desconectado'); 
+                location.href='index.html';">Cerrar Sesión</button></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+            <script>
+            var usuario =localStorage.getItem("usuario");
+            document.getElementById('usuario').innerHTML=usuario;
+            </script>
+      
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+      <h2>Productos</h2>
+      <p class="lead">Verás aquí todos los productos del sitio.</p>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col text-right">
+          <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+            <label class="btn btn-light active" id="sortAsc">
+              <input type="radio" name="options" autocomplete="off" checked><i class="fas fa-sort-amount-up mr-1"></i>$
+            </label>
+            <label class="btn btn-light" id="sortDesc">
+              <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>$
+            </label>
+            <label class="btn btn-light" id="sortByCount">
+              <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Cant.
+            </label>
+            <form class="example" action="#">
+              <input type="text" placeholder="Search.." id="search" name="search">
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-md-2"></div>
+        <div class="col-md-6 col-sm-12 mb-1 container">
+          <div class="row container p-0 m-0">
+            <div class="col">
+              <p class="font-weight-normal text-right my-2"><strong>Precio</strong></p>
+            </div>
+            <div class="col-4 p-0">
+              <input class="form-control" type="number" placeholder="min." id="rangeFilterCostMin">
+            </div>
+            <div class="col-4 p-0">
+              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCostMax">
+            </div>
+            <div class="col-3 p-0">
+              <div class="btn-group" role="group">
+                <button class="btn btn-light btn-block" id="rangeFilterCost">Filtrar</button>
+                <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="list-group">
+        <div class="row" id="cat-list-container">
+        </div>
+      </div>
+    </div>
+  </main>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/buscador.js"></script>
+  <script src="js/login-google.js"></script>
+</body>
+
+</html>

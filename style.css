@@ -1,0 +1,428 @@
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+}
+
+body{
+    background: linear-gradient(90deg,   #c0c1e4 , #1215d3);
+    padding: 20px;
+}
+
+.container-all{
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+}
+.ctn-form{
+    width: 80%;
+    padding: 40px;
+    background: rgb(248, 245, 245);
+}
+
+.title{
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 300;
+    color: rgb(42, 13, 207);;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 300;
+    color: black;
+}
+
+input[type="text"],
+input[type="password"]{
+    width: 100%;
+    height: 30px;
+    background: rgba(0,0,0,0);
+    border: 0px;
+    outline: 0px;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    font-size: 16px;
+}
+input[type="button"]{
+    width: 100%;
+    height: 50px;
+    margin-top: 60px;
+    color:white;
+    background: linear-gradient(90deg, #c0c1e4 , #1215d3);
+    font-weight: 300;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+input[type="button"]:hover{
+    background: linear-gradient(90deg, #1215d3,#c0c1e4);
+}
+.text-footer{
+    display: block;
+    margin-top: 100px;
+    text-align: center;
+    font-weight: 500;
+}
+.text-footer a{
+    color: #029EE1;
+    font-weight: 500;
+}
+
+.g-singin2{
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    font-weight: 300;
+    cursor: pointer;
+    font-size: 18px; 
+}
+
+/* Lado derecho*/
+
+.ctn-text{
+    width: 100%;
+    background-image: url("img/salon\ \(8\).jpg");
+    background-position: center;
+    background-size: cover;
+    padding: 40px;
+    position: relative;
+}
+
+.capa{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90de, #c0c1e4 , #1215d3);
+    opacity: 0.8;
+}
+
+.title-description{
+    position: relative;
+    top: 300px;
+    left: 15%;
+    color: rgb(48, 54, 141);
+    font-family:cursive;
+    font-weight: 300;
+    font-size: 70px;
+}
+
+.text-description{
+    position: relative;
+    top: 330px;
+    left: 5%;
+    color: rgb(12, 12, 12);
+    font-family:cursive;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 500px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .card {
+    padding-top: 20px;
+    margin: 10px 0 20px 0;
+    background-color: rgba(214, 224, 226, 0.2);
+    border-top-width: 0;
+    border-bottom-width: 2px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .card .card-heading {
+    padding: 0 20px;
+    margin: 0;
+  }
+
+  .card .card-heading.simple {
+    font-size: 20px;
+    font-weight: 300;
+    color: #777;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .card .card-heading.image img {
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    margin-right: 15px;
+    vertical-align: top;
+    border: 0;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  .card .card-heading.image .card-heading-header {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .card .card-heading.image .card-heading-header h3 {
+    margin: 0;
+    font-size: 14px;
+    line-height: 16px;
+    color: #262626;
+  }
+
+  .card .card-heading.image .card-heading-header span {
+    font-size: 12px;
+    color: #999999;
+  }
+
+  .card .card-body {
+    padding: 0 20px;
+    margin-top: 20px;
+  }
+
+  .card .card-media {
+    padding: 0 20px;
+    margin: 0 -14px;
+  }
+
+  .card .card-media img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .card .card-actions {
+    min-height: 30px;
+    padding: 0 20px 20px 20px;
+    margin: 20px 0 0 0;
+  }
+
+  .card .card-comments {
+    padding: 20px;
+    margin: 0;
+    background-color: #f8f8f8;
+  }
+
+  .card .card-comments .comments-collapse-toggle {
+    padding: 0;
+    margin: 0 20px 12px 20px;
+  }
+
+  .card .card-comments .comments-collapse-toggle a,
+  .card .card-comments .comments-collapse-toggle span {
+    padding-right: 5px;
+    overflow: hidden;
+    font-size: 12px;
+    color: #999;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .card-comments .media-heading {
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .card.people {
+    position: relative;
+    display: inline-block;
+    width: 170px;
+    height: 300px;
+    padding-top: 0;
+    margin-left: 20px;
+    overflow: hidden;
+    vertical-align: top;
+  }
+
+  .card.people:first-child {
+    margin-left: 0;
+  }
+
+  .card.people .card-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 170px;
+    height: 150px;
+    background-color: #ffffff;
+  }
+
+  .card.people .card-top.green {
+    background-color: #53a93f;
+  }
+
+  .card.people .card-top.blue {
+    background-color: #427fed;
+  }
+
+  .card.people .card-info {
+    position: absolute;
+    top: 150px;
+    display: inline-block;
+    width: 100%;
+    height: 101px;
+    overflow: hidden;
+    background: #ffffff;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .card.people .card-info .title {
+    display: block;
+    margin: 8px 14px 0 14px;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+    color: #404040;
+  }
+
+  .card.people .card-info .desc {
+    display: block;
+    margin: 8px 14px 0 14px;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 16px;
+    color: #737373;
+    text-overflow: ellipsis;
+  }
+
+  .card.people .card-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 20px;
+    line-height: 29px;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  .card.hovercard {
+    position: relative;
+    padding-top: 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: rgba(214, 224, 226, 0.2);
+  }
+
+  .card.hovercard .cardheader {
+    background: url("img/Tarjeta\ Diseño\ .jpg");
+    background-size: 900px;
+    height: 300px;
+  }
+
+  .card.hovercard .avatar {
+    position: relative;
+    top: -50px;
+    margin-bottom: -50px;
+  }
+
+  .card.hovercard .avatar img {
+    width: 200px;
+    height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .cont {
+    margin-left: 20px;
+  }
+
+  .card.hovercard .info {
+    padding: 5px 8px 10px;
+  }
+
+  .card.hovercard .info .title {
+    margin-bottom: 4px;
+    font-size: 24px;
+    line-height: 1;
+    color: #262626;
+    vertical-align: middle;
+  }
+
+  .card.hovercard .info .desc {
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 20px;
+    color: #737373;
+    text-overflow: ellipsis;
+  }
+
+  .card.hovercard .bottom {
+    padding: 0 20px;
+    margin-bottom: 17px;
+  }
+
+  .btn {
+    list-style: none;
+    top: 0px;
+    right: 30px;
+  }
+
+  #file{
+    display: none;
+  }
+
+  #uploadBtn{
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0,0,0,0.7);
+    color: wheat;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+  }
+
+  .avatar{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    border-radius: 100%;
+    overflow: hidden;
+    border: 1px solid grey;
+  }
+
+  .redes{
+    position: center;
+    margin-left: 100px;
+  }

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="307412725123-2n1i79cgmqvkkv8r7k0dchk3o1rhjmce.apps.googleusercontent.com">
+    <meta name="description" content="">
+    <title>Login eMercado</title>
+    <link href="style.css" rel="stylesheet">
+    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/login-google.js"></script>
+  </head>
+
+  <body>
+<div class="container-all">
+  <div class="ctn-form">
+    <img src="" alt="" class="logo">
+    <h1 class="title">Iniciar Sesión</h1>
+<form action="">
+  <label for="">Usuario</label>
+  <input type="text" id="usuario">
+  <label for="">Contraseña</label>
+  <input type="password" id="pass" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+  <input onclick=login() type="button" value="Iniciar"><br>
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <a href="#" onclick="signOut();">Sign out</a>
+</form>
+<span class="text-footer">¿Aún no te has registrado?  <a href="perfil.html"> Registrate</a></span>
+<ul class="redes">
+  <a href="http://www.facebook.com/AQUI_TU_PAGINA" target="_blank"><img alt="Siguenos en Facebook" src="img/salon (9).jpg" width=32 height=32  /></a>
+  <a href="http://tiktok.com/AQUI_TU_USUARIO" target="_blank"><img src="img/salon (5).jpeg" width=32 height=32 alt="Síguenos en Twitter" /></a>
+  <a href="URL_DE_TU_PERFIL_INSTAGRAM" target="_blank"><img alt="Siguenos en Blogger" src="img/salon (4).jpg" width=32 height=32  /></a>
+  <a href="whatsapp.com/AQUI_TU_PAGINA" target="_blank"><img alt="Siguenos en Blogger" src="img/salon (2).jpg" width=32 height=32  /></a>
+</ul>
+  </div>
+  <div class="ctn-text">
+    <div class="capa"></div>
+      <h1 class="title-description">Spa- Salón</h1>
+      <p class="text-description">Aquí trabajamos para resaltar tu belleza.</p>
+  </div>
+</div>
+  </body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <style>
+    .col-50 {
+      -ms-flex: 50%; /* IE10 */
+      flex: 50%;
+    }
+    
+    .col-75 {
+      -ms-flex: 75%; /* IE10 */
+      flex: 75%;
+    }
+    
+    .col-25,
+    .col-50,
+    .col-75 {
+      padding: 0 16px;
+    }
+    
+    
+    
+    input[type=text] {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    
+    
+    .icon-container {
+      margin-bottom: 20px;
+      padding: 7px 0;
+      font-size: 24px;
+    }
+    
+    
+    .btn:hover {
+      background-color: hotpink;
+    }
+    
+    a {
+      color: #2196F3;
+    }
+    
+    hr {
+      border: 1px solid lightgrey;
+    }
+    
+    span.price {
+      float: right;
+      color: grey;
+    }
+    
+    /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+    @media (max-width: 800px) {
+      .row {
+        flex-direction: column-reverse;
+      }
+      .col-25 {
+        margin-bottom: 20px;
+      }
+    }
+    tfoot {
+      font-weight: bold;
+      background: lightblue;
+      color: darkblue;
+    }
+    .moneda{
+      font-weight: bolder;
+      color:darkgreen;
+    }
+    #cargando{
+      display: none;
+    }
+
+    </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">E-commerce</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item container d-flex flex-column flex-md-row justify-content-between">
+          <a class="nav-link" href="index.html">Inicio</a>
+          <a class="nav-link" href="categories.html">Categorías</a>
+          <a class="nav-link" href="products.html">Productos</a>
+          <a class="nav-link" href="sell.html">Vender</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a style="background-color: hotpink; border: none;" class="nav-link dropdown-toggle btn btn-secondary" href="#" id="dropdownMenuLink" role="button" 
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Bienvenido/a: <span style="color: white; font-weight: bold;" id="usuario"></span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="perfil.html">Perfil de Usuario</a>
+          <a class="dropdown-item" href="cart.html">Carrito de Compras</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#" style="padding:19px;"><button style="border: none; background-color: hotpink;" onclick="localStorage.clear(); 
+              alert('Usuario desconectado'); 
+              location.href='index.html';">Cerrar Sesión</button></a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+          <script>
+          var usuario =localStorage.getItem("usuario");
+          document.getElementById('usuario').innerHTML=usuario;
+          </script>
+          
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Carrito de compras</h2>
+      </div>
+      <h4>Artículos a comprar</h4>
+      <hr>
+
+      <main>
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col">
+                    <form id="procesar pago" class="needs-validation" action="#">
+                        <div class="form-group row">
+                            <label for="cliente" class="col-12 col-md-2 col-form-label h2"><strong> Cliente :</strong></label>
+                            <div class="col-12 col-md-10">
+                                <input type="text" class="form-control" id="cliente" placeholder="Ingresa nombre cliente" required>
+                                <div class="invalid-feedback">
+                                  No es valido!
+                                </div>
+                                <div class="valid-feedback">
+                                  Correcto!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-12 col-md-2 col-form-label h2"><strong> Correo :</strong></label>
+                            <div class="col-12 col-md-10">
+                                <input type="email" class="form-control" id="correo" placeholder="Ingresa tu correo" required>
+                                <div class="invalid-feedback">
+                                  No es valido!
+                                </div>
+                                <div class="valid-feedback">
+                                  Correcto!
+                                </div>
+                        </div>
+                        </div>
+                        <div id="cart" class="table-responsive col-lg-12">
+                            <table class="table" id="lista-compra">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Imagen</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Precio</th>
+                                        <th scope="col">Cantidad</th>
+                                        <th scope="col">Subtotal</th>
+                                        <th scope="col">Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="articulos">
+                                  <div id="vacio"></div><br>
+                                </tbody>
+                            </table>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+                <hr class="mb-4">
+                <h4 class="mb-3">Tipo de envio</h4>
+                <div class="d-block my-3">
+                  <div class="custom-control custom-radio">
+                    <input id="premium" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
+                    <label class="custom-control-label" for="premium">Premium (2-5 días) - Costo del 15% sobre el subtotal.  </label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input id="express" name="publicationType" type="radio" class="custom-control-input" required="">
+                    <label class="custom-control-label" for="express">Express (5-8 días) - Costo del 7% sobre el subtotal.  </label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input id="standard" name="publicationType" type="radio" class="custom-control-input" required="">
+                    <label class="custom-control-label" for="standard">Standard (12 a 15 días) - Costo del 5% sobre el subtotal. 
+                    </label>
+                  </div>
+                  <div class="row">
+                    <button type="button" class="m-1 btn btn-link" data-toggle="modal" data-target="#contidionsModal">Ver condiciones</button>
+                  </div>
+                </div>
+                <hr class="mb-4">
+                <h4 class="mb-3">Costos</h4>
+                <ul class="list-group mb-3">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-0">Subtotal</h6>
+                        <small class="text-muted">Costo unitario del producto por cantidad</small>
+                      </div>
+                      <span id="subtotal" class="moneda">-</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                        <h6 class="my-0">Costo de envio</h6>
+                        <small class="text-muted">Según el tipo de envio</small>
+                      </div>
+                      <span id="envio" class="moneda">-</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                      <div>
+                      <h6 class="my-0">Moneda</h6>
+                      </div>
+                      <select class="custom-select d-block w-80" style="width:800px" id="productCurrency" required="">
+                        <option selected>Pesos Uruguayos (UYU)</option>
+                        <option>Dólares (USD)</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Ingresa una categoría válida.
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                      <span>Total ($)</span>
+                      <strong id="total" class="moneda">-</strong>
+                    </li>
+                  </ul>
+
+                <hr class="mb-4">
+                <h4 class="mb-3">Forma de Pago</h4>
+                <div class="row"> 
+                  Transferencia Bancaria: <button type="submit" id="pago" class="m-1 btn btn-link" data-toggle="modal" data-target="#Modal">Seleccionar</button>
+                </div>
+
+                <hr class="mb-4">
+                <div class="row justify-content-between">
+                  <div class="col-md-4 mb-2">
+                      <a href="cart.html" class="btn btn-info btn-block">Seguir comprando</a>
+                  </div>
+
+                  <div class="row justify-content-center" id="loaders">
+                    <img id="cargando" src="img/cargando.gif" width="220">
+                  </div>
+
+                  <div class="col-xs-12 col-md-4">
+                    <button class="btn btn-success btn-block" type="button" id="procesar-compra">Finalizar compra</button>
+                </div>
+              </div>
+              </form>
+            </div>
+          </div>
+        <footer class="text-muted">
+          <div class="container">
+              <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+              <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+          </div>
+        </footer>
+        <div class="alert fade" role="alert" id="alertResult">
+            <span id="resultSpan"></span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+  
+        <div class="modal fade" tabindex="-1" role="dialog" id="contidionsModal">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Condiciones de publicación</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <h5 class="text-warning">Premium (2-5 días) - Costo del 15% sobre el subtotal.</h5>
+                        <p class="muted text-justify">Tu producto se verá de forma promocionada en portada, además de las condiciones de Premium y Estándar.</p>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <h5 class="text-primary">Express (5-8 días) - Costo del 7% sobre el subtotal. </h5>
+                        <p class="muted text-justify">Se mostrará el producto en los primeros lugares de resultados de búsqueda, así cómo cuando se ingrese a la categoría que pertenezca.</p>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <h5 class="text-secondary">Standard (12 a 15 días) - Costo del 5% sobre el subtotal. 
+                        </h5>
+                        <p class="muted text-justify">El producto se listará en la categoría correspondiente, así como en los resultados de búsquedas que coincidan con las palabras claves en el nombre.</p>
+                    </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="modal fade" tabindex="-1" role="dialog" id="Modal">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="container">
+                      <div class="row">
+                        <div class="col-50">
+                          <h3>Forma de Pago</h3>
+                          <label for="fname">Accepted Cards</label>
+                          <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                          </div>
+                          <label for="cname">Name on Card</label>
+                          <input type="text" id="cname" class="form-control" name="cardname" placeholder="John More Doe">
+                          <label for="ccnum">Credit card number</label>
+                          <div class="invalid-feedback">
+                            No es valido!
+                          </div>
+                          <div class="valid-feedback">
+                            Correcto!
+                          </div>
+                          <input type="text" id="ccnum" class="form-control" name="cardnumber" placeholder="1111-2222-3333-4444">
+                          <label for="expmonth">Exp Month</label>
+                          <div class="invalid-feedback">
+                            No es valido!
+                          </div>
+                          <div class="valid-feedback">
+                            Correcto!
+                          </div>
+                          <input type="text" id="expmonth" class="form-control" name="expmonth" placeholder="September">
+                          <div class="invalid-feedback">
+                            No es valido!
+                          </div>
+                          <div class="valid-feedback">
+                            Correcto!
+                          </div>
+              
+                          <div class="row">
+                            <div class="col-50">
+                              <label for="expyear">Exp Year</label>
+                              <input type="text" id="expyear" class="form-control" name="expyear" placeholder="2018">
+                              <div class="invalid-feedback">
+                                No es valido!
+                              </div>
+                              <div class="valid-feedback">
+                                Correcto!
+                              </div>
+                            </div>
+                            <div class="col-50">
+                              <label for="cvv">CVV</label>
+                              <input type="text" id="cvv" class="form-control" name="cvv" placeholder="352">
+                              <div class="invalid-feedback">
+                                No es valido!
+                              </div>
+                              <div class="valid-feedback">
+                                Correcto!
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+              
+                      </div>
+                      <label>
+                        <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                      </label>
+                      <input type="submit" value="Continue to checkout" class="btn">
+                    </form>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/dropzone.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/login-google.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</body>
+
+</html>
